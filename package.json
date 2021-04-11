@@ -1,0 +1,28 @@
+{
+  "name": "discord.js-leveling-bot",
+  "version": "1.0.0",
+  "description": "> A Discord Leveling Bot built with Discord.js and Canvas made by roefinoavrililo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roefinoavrililo/Discord.JS-Leveling-Bot.git"
+  },
+  "author": "roefinoavrililo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roefinoavrililo/Discord.JS-Leveling-Bot/issues"
+  },
+  "homepage": "https://github.com/roefinoavrililo/Discord.JS-Leveling-Bot#readme",
+  "engines": {
+    "node": "12.x"
+  },
+  "dependencies": {
+    "better-sqlite3": "^7.1.2",
+    "canvas": "^2.6.1",
+    "discord.js": "^12.5.0",
+    "fs": "^0.0.2"
+  }
+}
