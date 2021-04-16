@@ -1,4 +1,3 @@
-const { createCanvas, loadImage } = require("canvas");
 const canvacord = require("canvacord");
 const Discord = require("discord.js");
 const SQLite = require("better-sqlite3");
@@ -51,9 +50,6 @@ module.exports = {
         `**Missing Permission**: ATTACH_FILES or MESSAGE ATTACHMENTS`
       );
 
-    let result = Math.floor(Math.random() * replies.length);
-    const canvas = createCanvas(1000, 333);
-    const background = await loadImage(`${replies[result]}`);
     const card = new canvacord.Rank()
     .setUsername(user.username)
     .setDiscriminator(user.discriminator)
