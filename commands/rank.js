@@ -49,19 +49,24 @@ module.exports = {
       return message.reply(
         `**Missing Permission**: ATTACH_FILES or MESSAGE ATTACHMENTS`
       );
-
-    const card = new canvacord.Rank()
-    .setUsername(user.username)
-    .setDiscriminator(user.discriminator)
-    .setRank(rank)
-    .setLevel(levelInfo)
-    .setCurrentXP(xpInfo)
-    .setRequiredXP(nextXP)
-    .setStatus(user.presence.status)
-    .setAvatar(user.displayAvatarURL({ format: "png", size: 1024 }));
     
-    const img = await card.build();
-  
-  return message.channel.send(new MessageAttachment(img, "rank.png"));
-  }
+             const rankCard = new canvas.Rank()
+            .setAvatar(user.displayAvatarURL({
+                format: 'png'
+            }))
+            .setCurrentXP(xpInfo)
+            .setRequiredXP(reqXP)
+            .setStatus(user.presence.status)
+            .setUsername(user.username)
+            .setDiscriminator(user.discriminator)
+            .setLevel(levelInfo)
+            .setRank(rank)
+
+        rankCard.build()
+            .then(data => {
+                const attachment = new Discord.MessageAttachment(data, "RankCard.png");
+                message.channel.send(attachment);
+            });
+    }
+
 };
